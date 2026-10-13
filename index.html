@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome do escritório</title>
+    <!-- Google Fonts para tipografia elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0b1f3b; /* Azul corporativo escuro */
+            --accent-color: #c5a059;  /* Tom dourado/bronze sofisticado */
+            --text-color: #333333;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(11, 31, 59, 0.75), rgba(11, 31, 59, 0.75)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* --- SEÇÃO DE DESTAQUES / EXPERTISE --- */
+        .expertise {
+            padding: 100px 40px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-top: 4px solid var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .card-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">NOME DO ESCRITÓRIO</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="advogado.html">Advogados</a></li>
+                <li><a href="#noticias">Notícias & Insights</a></li>
+                <li><a href="#" class="whatsapp-contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Soluções Jurídicas de Elite Global</h1>
+            <p>Atendendo aos principais desafios corporativos, de litígio, propriedade intelectual e transações financeiras em todo o mundo.</p>
+            <a href="#experiencia" class="btn" id="exploreBtn">Explorar Áreas</a>
+        </div>
+    </section>
+
+    <!-- Seção de Expertise -->
+    <section class="expertise" id="experiencia">
+        <h2 class="section-title">Nossa Expertise</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Corporate & Private Equity</h3>
+                <p>Orientação estratégica em fusões, aquisições e transações complexas de private equity globalmente.</p>
+                <a href="#" class="card-link">Saiba mais &rarr;</a>
+            </div>
+            <div class="card">
+                <h3>Litigação & Resolução de Disputas</h3>
+                <p>Defesa vigorosa em tribunais e arbitragens internacionais de alto risco e visibilidade.</p>
+                <a href="#" class="card-link">Saiba mais &rarr;</a>
+            </div>
+            <div class="card">
+                <h3>Reestruturação & Falências</h3>
+                <p>Liderança de mercado em reestruturação financeira corporativa e consultoria de insolvência.</p>
+                <a href="#" class="card-link">Saiba mais &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="logo" style="color: white;">NOME DO ESCRITÓRIO</a>
+            <ul class="footer-links">
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#" class="whatsapp-contact">Contato</a></li>
+            </ul>
+        </div>
+        <p class="copyright">&copy; 2026 Nome do escritório. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Funcionalidade do menu responsivo para dispositivos móveis
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Alerta interativo ao clicar no botão de exploração
+        const exploreBtn = document.getElementById('exploreBtn');
+        exploreBtn.addEventListener('click', (e) => {
+            console.log("O usuário clicou para explorar a experiência jurídica.");
+        });
+
+        // --- DIRECIONAMENTO PARA O WHATSAPP ---
+        const phoneNumber = "5591999999999"; // Altere para o seu número real (DDD + Número)
+        const message = "Olá! Gostaria de obter mais informações sobre os serviços jurídicos do escritório.";
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        const contactLinks = document.querySelectorAll('.whatsapp-contact');
+        contactLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

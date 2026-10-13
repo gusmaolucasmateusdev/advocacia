@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossos Advogados | Nome do Escritório</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary-color: #0b1f3b;
+    --accent-color: #c5a059;
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px #0000000d;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1280px;
+    margin: auto;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.hero {
+    margin-top: 70px;
+    min-height: 400px;
+    padding: 80px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(
+        rgba(11,31,59,.88),
+        rgba(11,31,59,.88)
+    ), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80') center/cover;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.eyebrow {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: .8rem;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #e0e0e0;
+}
+
+.intro {
+    max-width: 850px;
+    margin: auto;
+    padding: 80px 25px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.team {
+    background: var(--bg-light);
+    padding: 80px 30px;
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+}
+
+.team-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.lawyer-card {
+    background: white;
+    border: 1px solid #e8e8e8;
+}
+
+.lawyer-photo {
+    height: 320px;
+    overflow: hidden;
+}
+
+.lawyer-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.lawyer-info {
+    padding: 25px;
+}
+
+.lawyer-role {
+    color: #98743b;
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+.lawyer-info h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.oab {
+    font-size: .8rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.lawyer-bio {
+    color: #666;
+    font-size: .9rem;
+    margin-bottom: 20px;
+}
+
+.specialties {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.specialties h4 {
+    color: var(--primary-color);
+}
+
+.specialties ul {
+    padding-left: 20px;
+    color: #666;
+    font-size: .9rem;
+}
+
+.profile-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+    font-weight: 600;
+}
+/* VALORES DO ESCRITÓRIO */
+
+.values {
+    max-width: 1180px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.value-item {
+    padding: 28px;
+    background: var(--bg-light);
+    border-top: 3px solid var(--accent-color);
+}
+
+.value-item h3 {
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.value-item p {
+    color: #666;
+    font-size: .9rem;
+}
+
+.value-number {
+    font-family: 'Cinzel', serif;
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+/* CONTATO */
+
+.contact {
+    padding: 75px 25px;
+    text-align: center;
+    color: white;
+    background: var(--primary-color);
+}
+
+.contact h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin: 15px auto;
+}
+
+.contact p {
+    margin: 15px auto 25px;
+    max-width: 650px;
+    color: #e0e0e0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    color: white;
+    border: 1px solid var(--accent-color);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #08172b;
+    color: white;
+    text-align: center;
+    padding: 40px 25px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.footer-logo {
+    font-family: 'Cinzel', serif;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-links a {
+    color: #ddd;
+    font-size: .85rem;
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: .8rem;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .team-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        max-width: 480px;
+        margin: auto;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .contact h2 {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            NOME DO ESCRITÓRIO
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#experiencia">Expertise</a></li>
+            <li><a href="advogados.html">Advogados</a></li>
+            <li><a href="index.html#noticias">Notícias &amp; Insights</a></li>
+            <li><a href="index.html">Voltar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+
+
+<section class="intro">
+    <span class="eyebrow">Nossa equipe</span>
+
+    <h2 class="section-title">
+        Experiência que inspira confiança
+    </h2>
+
+    <span class="gold-line"></span>
+
+    <p>
+        Acreditamos que a excelência jurídica começa pelas pessoas.
+        Nossa equipe reúne profissionais comprometidos com a ética,
+        a qualidade técnica e a construção de soluções alinhadas
+        às necessidades de cada cliente.
+    </p>
+</section>
+
+<section class="team" id="advogados">
+    <div class="container">
+
+        <div class="team-heading">
+            <span class="eyebrow">Nossos profissionais</span>
+
+            <h2 class="section-title">
+                Conheça nossos advogados
+            </h2>
+
+            <p>
+                Profissionais com experiências complementares,
+                unidos pelo compromisso com a excelência jurídica.
+            </p>
+        </div>
+
+        <div class="team-grid">
+
+            <article class="lawyer-card">
+                <div class="lawyer-photo">
+                    <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85"
+                        alt="Fotografia ilustrativa de advogado"
+                        loading="lazy">
+                </div>
+
+                <div class="lawyer-info">
+                    <p class="lawyer-role">Sócio-fundador</p>
+
+                    <h3>Dr. Nome do Advogado</h3>
+
+                    <p class="oab">OAB/UF nº 000.000</p>
+
+                    <p class="lawyer-bio">
+                        Advogado com atuação em assessoria jurídica
+                        estratégica e questões empresariais complexas.
+                    </p>
+
+                    <div class="specialties">
+                        <h4>Áreas de atuação</h4>
+                        <ul>
+                            <li>Direito Empresarial</li>
+                            <li>Contratos e Negociações</li>
+                            <li>Consultoria Estratégica</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contato" class="profile-link">
+                        Entre em contato →
+                    </a>
+                </div>
+            </article>
+
+            <article class="lawyer-card">
+                <div class="lawyer-photo">
+                    <img
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=85"
+                        alt="Fotografia ilustrativa de advogada"
+                        loading="lazy">
+                </div>
+
+                <div class="lawyer-info">
+                    <p class="lawyer-role">Sócia</p>
+
+                    <h3>Dra. Nome da Advogada</h3>
+
+                    <p class="oab">OAB/UF nº 000.000</p>
+
+                    <p class="lawyer-bio">
+                        Profissional dedicada à assessoria preventiva
+                        e à resolução estratégica de conflitos.
+                    </p>
+
+                    <div class="specialties">
+                        <h4>Áreas de atuação</h4>
+                        <ul>
+                            <li>Direito Civil</li>
+                            <li>Contencioso Estratégico</li>
+                            <li>Resolução de Disputas</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contato" class="profile-link">
+                        Entre em contato →
+                    </a>
+                </div>
+            </article>
+
+            <article class="lawyer-card">
+                <div class="lawyer-photo">
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85"
+                        alt="Fotografia ilustrativa de advogado"
+                        loading="lazy">
+                </div>
+
+                <div class="lawyer-info">
+                    <p class="lawyer-role">Advogado associado</p>
+
+                    <h3>Dr. Nome do Advogado</h3>
+
+                    <p class="oab">OAB/UF nº 000.000</p>
+
+                    <p class="lawyer-bio">
+                        Atua na pesquisa jurídica e no desenvolvimento
+                        de estratégias jurídicas personalizadas.
+                    </p>
+
+                    <div class="specialties">
+                        <h4>Áreas de atuação</h4>
+                        <ul>
+                            <li>Direito Societário</li>
+                            <li>Reestruturação Empresarial</li>
+                            <li>Compliance</li>
+                        </ul>
+                    </div>
+
+                    <a href="#contato" class="profile-link">
+                        Entre em contato →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
